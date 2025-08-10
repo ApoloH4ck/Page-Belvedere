@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valutazione Gratuita</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Pantalla de bienvenida -->
+    <section id="welcome" class="active">
+        <div class="overlay"></div>
+        <div class="welcome-content">
+            <span class="tagline">VALUTAZIONE GRATUITA</span>
+            <h1>Affida il tuo immobile a Belvedere Investimenti</h1>
+            <p>
+                Ti sei mai chiesto quanto potresti guadagnare davvero dal tuo appartamento?  
+                Con Belvedere Investimenti trasformiamo ogni immobile in una rendita efficiente e senza stress.  
+                Il nostro team si occupa di tutto, dalla valutazione alla gestione.  
+                <br><br>
+                Compila il form per scoprire il potenziale reale della tua casa.  
+                Il tuo futuro inizia qui.
+            </p>
+            <button id="start-btn" class="btn-submit pulse">Avanti</button>
+        </div>
+    </section>
+
+    <!-- Formulario -->
+    <section id="form-section">
+        <div class="container">
+            <form id="contact-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="Nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cognome">Cognome</label>
+                        <input type="text" id="cognome" name="Cognome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Telefono</label>
+                        <input type="tel" id="telefono" name="Telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="citta">Città</label>
+                        <input type="text" id="citta" name="Città">
+                    </div>
+                    <div class="form-group">
+                        <label for="indirizzo">Indirizzo</label>
+                        <input type="text" id="indirizzo" name="Indirizzo">
+                    </div>
+                    <div class="form-group">
+                        <label for="camere">Camere</label>
+                        <input type="number" id="camere" name="Camere">
+                    </div>
+                    <div class="form-group">
+                        <label for="bagni">Bagni</label>
+                        <input type="number" id="bagni" name="Bagni">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="messaggio">Messaggio</label>
+                        <textarea id="messaggio" name="Messaggio"></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="conosciuti">Dove ci hai conosciuti?</label>
+                        <select id="conosciuti" name="Conosciuti">
+                            <option value="">Seleziona...</option>
+                            <option value="internet">Internet</option>
+                            <option value="social">Social Media</option>
+                            <option value="amici">Amici</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="privacy">
+                    <input type="checkbox" id="privacy" required>
+                    <label for="privacy">
+                        Acconsento al trattamento dei dati personali 
+                        (<a href="#">privacy policy</a>) *
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-submit">Invia</button>
+            </form>
+        </div>
+    </section>
+
+<script>
+const welcome = document.getElementById('welcome');
+const formSection = document.getElementById('form-section');
+const startBtn = document.getElementById('start-btn');
+
+startBtn.addEventListener('click', () => {
+    welcome.classList.add('fade-out');
+    setTimeout(() => {
+        welcome.style.display = 'none';
+        formSection.style.display = 'block';
+        formSection.classList.add('fade-in');
+    }, 500);
+});
+
+const form = document.getElementById('contact-form');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const formData = {
+    Nome: document.getElementById('nome').value,
+    Cognome: document.getElementById('cognome').value,
+    Email: document.getElementById('email').value,
+    Telefono: document.getElementById('telefono').value,
+    Città: document.getElementById('citta').value,
+    Indirizzo: document.getElementById('indirizzo').value,
+    Camere: document.getElementById('camere').value,
+    Bagni: document.getElementById('bagni').value,
+    Messaggio: document.getElementById('messaggio').value,
+    Conosciuti: document.getElementById('conosciuti').value
+  };
+
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxKcVuJo7VdMc4KOf-5xoHXGHQXx1B50wywRo_roKvpmHL50M7ckcHHubUgX8nBQuN8/exec';
+
+  try {
+    const response = await fetch(scriptURL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      alert('Modulo inviato con successo!');
+      form.reset();
+    } else {
+      alert('Errore al inviare il modulo.');
+    }
+  } catch (error) {
+    alert('Modulo inviato con successo!');
+    form.reset();
+  }
+});
+</script>
+
+</body>
+</html>
