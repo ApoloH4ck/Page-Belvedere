@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valutazione Gratuita</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -31,36 +34,36 @@
                 <div class="form-grid">
                     <div class="form-group full-width">
                         <label for="nome-cognome">Nome e Cognome</label>
-                        <input type="text" id="nome-cognome" name="Nome e Cognome" required>
+                        <input type="text" id="nome-cognome" name="Nome e Cognome" placeholder="Mario Rossi" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="Email" required>
+                        <input type="email" id="email" name="Email" placeholder="mario.rossi@email.it" required>
                     </div>
                     <div class="form-group">
                         <label for="telefono">Telefono</label>
-                        <input type="tel" id="telefono" name="Telefono">
+                        <input type="tel" id="telefono" name="Telefono" placeholder="+39 123 4567890">
                     </div>
                     <div class="form-group">
                         <label for="citta">Città</label>
-                        <input type="text" id="citta" name="Città">
+                        <input type="text" id="citta" name="Città" placeholder="Milano">
                     </div>
                     <div class="form-group">
                         <label for="indirizzo">Indirizzo</label>
-                        <input type="text" id="indirizzo" name="Indirizzo">
+                        <input type="text" id="indirizzo" name="Indirizzo" placeholder="Via Roma, 1">
                     </div>
                     <div class="form-group">
                         <label for="camere">Camere</label>
-                        <input type="number" id="camere" name="Camere">
+                        <input type="number" id="camere" name="Camere" placeholder="Numero di camere">
                     </div>
                     <div class="form-group">
                         <label for="bagni">Bagni</label>
-                        <input type="number" id="bagni" name="Bagni">
+                        <input type="number" id="bagni" name="Bagni" placeholder="Numero di bagni">
                     </div>
                     <div class="form-group full-width">
                         <label for="messaggio">Messaggio</label>
-                        <textarea id="messaggio" name="Messaggio"></textarea>
+                        <textarea id="messaggio" name="Messaggio" placeholder="Scrivi qui il tuo messaggio..."></textarea>
                     </div>
                     
                     <div class="form-group full-width">
@@ -91,10 +94,12 @@
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <div class="modal-body">
-                <h2 class="modal-title">Un grande 🎉</h2>
-                <p>Che scoppietta!</p>
+                <h2 class="modal-title">Fantastico! 🎉</h2>
                 <p class="modal-message">
-                    A un passo dalla tua rendita passiva.
+                    Grazie per la tua richiesta.
+                </p>
+                <p class="modal-phrase">
+                    Il primo passo verso la tua libertà finanziaria è stato fatto.
                 </p>
             </div>
         </div>
@@ -117,6 +122,21 @@ startBtn.addEventListener('click', () => {
     }, 500);
 });
 
+function createConfetti() {
+    const confettiColors = ['#f00', '#0f0', '#00f', '#ff0', '#f0f', '#0ff'];
+    for (let i = 0; i < 50; i++) {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.animationDelay = Math.random() * 0.5 + 's';
+        confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+        confetti.style.setProperty('--x', (Math.random() - 0.5) * 200 + 'px');
+        confetti.style.setProperty('--y', Math.random() * 200 + 'px');
+        confetti.style.setProperty('--deg', Math.random() * 360 + 'deg');
+        successModal.appendChild(confetti);
+    }
+}
+
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -134,11 +154,9 @@ form.addEventListener('submit', async (e) => {
 
   const scriptURL = 'https://script.google.com/macros/s/AKfycbxKcVuJo7VdMc4KOf-5xoHXGHQXx1B50wywRo_roKvpmHL50M7ckcHHubUgX8nBQuN8/exec';
 
-  // Mostrar el modal de éxito inmediatamente
   successModal.classList.add('show');
+  createConfetti();
   form.reset();
-
-  // Enviar los datos en segundo plano
   try {
     const response = await fetch(scriptURL, {
       method: 'POST',
@@ -148,23 +166,21 @@ form.addEventListener('submit', async (e) => {
     });
 
     if (response.ok) {
-      console.error('Modulo inviato con successo!');
-      form.reset();
+      console.event('Modulo inviato con successo!');
+        
     } else {
-      console.error('Errore al inviare il modulo.');
+      console.event('Errore al inviare il modulo.');
     }
   } catch (error) {
-    console.error('Modulo inviato con successo!');
-    form.reset();
+    console.event('Modulo inviato con successo!');
   }
+
 });
 
-// Evento para cerrar el modal
 closeBtn.addEventListener('click', () => {
   successModal.classList.remove('show');
 });
 
-// Cerrar el modal al hacer clic fuera de él
 window.addEventListener('click', (event) => {
     if (event.target === successModal) {
         successModal.classList.remove('show');
