@@ -127,12 +127,19 @@ function createConfetti() {
     for (let i = 0; i < 50; i++) {
         const confetti = document.createElement('div');
         confetti.classList.add('confetti');
-        confetti.style.left = Math.random() * 100 + 'vw';
+        
+        // Posicionamiento relativo al modal
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.top = Math.random() * 100 + '%';
+        
         confetti.style.animationDelay = Math.random() * 0.5 + 's';
         confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+        
+        // Las variables CSS para la animación se mantienen
         confetti.style.setProperty('--x', (Math.random() - 0.5) * 200 + 'px');
         confetti.style.setProperty('--y', Math.random() * 200 + 'px');
         confetti.style.setProperty('--deg', Math.random() * 360 + 'deg');
+        
         successModal.appendChild(confetti);
     }
 }
@@ -166,13 +173,13 @@ form.addEventListener('submit', async (e) => {
     });
 
     if (response.ok) {
-      console.event('Modulo inviato con successo!');
-        
+      console.add('Modulo inviato con successo!');
     } else {
-      console.event('Errore al inviare il modulo.');
+     console.add('Errore al inviare il modulo.');
     }
   } catch (error) {
-    console.event('Modulo inviato con successo!');
+    console.add('Modulo inviato con successo!');
+    
   }
 
 });
