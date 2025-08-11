@@ -167,7 +167,6 @@ form.addEventListener('submit', async (e) => {
   try {
     const response = await fetch(scriptURL, {
       method: 'POST',
-      // ⚠️ Cambio clave: Usamos 'text/plain' para evitar el error de CORS.
       headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify(formData),
     });
