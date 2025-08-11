@@ -89,7 +89,7 @@ input, textarea, select {
     box-sizing: border-box;
 }
 
-/* Estado de enfoque (focus) */
+/* Estado de enfoque */
 input:focus, textarea:focus, select:focus {
     border-color: #007bff;
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
