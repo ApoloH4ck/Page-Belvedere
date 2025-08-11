@@ -182,26 +182,29 @@ textarea {
 
 /* Estilos para el modal de éxito */
 #success-modal {
-    display: none;
+    display: flex; /* CAMBIO: Siempre será un contenedor flex, pero invisible */
     position: fixed;
     z-index: 100;
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(5px);
+    
+    /* Propiedades clave para el centrado */
     justify-content: center;
     align-items: center;
+    
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    position: relative;
+    visibility: hidden; /* Oculto por defecto */
+    transition: opacity 0.5s ease-in-out, visibility 0.5s; /* Transición suave */
 }
 
 #success-modal.show {
-    display: flex;
     opacity: 1;
+    visibility: visible;
 }
 
 .modal-content {
