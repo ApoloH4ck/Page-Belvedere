@@ -354,3 +354,112 @@ body.form-mode #form-section{ display:block !important; }
 
 /* Bloquea scroll de fondo cuando el modal está abierto */
 body.modal-open{ overflow:hidden; }
+
+/* ====== MOBILE PRO PACK (pegar al final) ====== */
+
+/* Seguridad: no scroll horizontal fantasma y ajuste iOS */
+html, body { overflow-x: hidden; -webkit-text-size-adjust: 100%; overscroll-behavior: none; }
+
+/* Contenedores y tipografía: línea ~60–70 caracteres */
+.welcome-content,
+.about-content,
+.container {
+  max-width: 680px;   /* estrechamos en móvil para mejor lectura */
+  width: 92%;
+}
+
+/* HERO: tipografías y espaciado más equilibrados en 320–430px */
+@media (max-width: 430px) {
+  #welcome { padding: max(18px, env(safe-area-inset-top)) 14px max(22px, env(safe-area-inset-bottom)); }
+  .tagline { font-size: 11.5px; padding: 5px 10px; }
+  h1 { font-size: clamp(24px, 8.5vw, 34px); letter-spacing: -0.2px; line-height: 1.15; }
+  .subhead { font-size: 14.5px; line-height: 1.45; margin-top: 6px; }
+  .value-points { gap: 8px; }
+  .value-points li { font-size: 13px; padding: 7px 12px; }
+  .hero-ctas { gap: 10px; }
+  .btn-submit { padding: 12px 18px; font-size: 16px; min-height: 46px; }
+  .scroll-cue { width: 50px; height: 50px; }
+  .highlight:after { height: 10px; bottom: 3px; }
+}
+
+/* “Chi siamo”: tarjeta más ligera y legible en móvil */
+@media (max-width: 430px) {
+  .about { min-height: 84svh; padding: 56px 12px; }
+  .about-content { 
+    padding: 18px 14px;
+    background: rgba(255,255,255,.92);
+    border-radius: 16px;
+    box-shadow: 0 16px 44px rgba(13,33,62,.18);
+  }
+  .about h2 { font-size: 26px; margin: 2px 0 8px; }
+  .about .lead { font-size: 15px; line-height: 1.5; }
+  .about-points { gap: 8px; }
+  .about-points li { font-size: 14px; padding: 10px 12px; border-radius: 12px; }
+}
+
+/* Formulario: grid y campos más compactos pero cómodos */
+@media (max-width: 430px) {
+  #form-section { padding: 40px 12px; }
+  .container { padding: 18px 12px; border-radius: 16px; }
+  .form-grid { gap: 12px; }
+  label { font-size: 13.5px; margin-bottom: 6px; }
+  input, textarea, select {
+    padding: 12px 12px;
+    font-size: 16px;              /* evita zoom iOS */
+    border-radius: 12px;
+  }
+  textarea { min-height: 110px; }
+  .btn-submit { font-size: 16px; padding: 12px 18px; border-radius: 999px; }
+}
+
+/* Privacidad: que no se rompa en dos columnas y texto debajo del checkbox */
+.privacy {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 12px;
+}
+.privacy input[type="checkbox"] {
+  width: 22px; height: 22px; margin-top: 2px;
+  flex: 0 0 22px;
+}
+.privacy label {
+  flex: 1 1 100%;
+  line-height: 1.45;
+}
+
+/* Select: flecha y padding sin cortar contenido */
+select {
+  background-position: right 10px center;
+  padding-right: 34px;
+}
+
+/* Tarjetas/inputs: sombras más suaves y bordes menos “duros” en móvil */
+@media (max-width: 430px) {
+  .container, .about-content { box-shadow: 0 14px 36px rgba(13,33,62,.16); }
+  input, textarea, select { box-shadow: 0 2px 6px rgba(0,0,0,.035); }
+}
+
+/* Modal móvil: que nunca desborde vertical y con padding cómodo */
+#success-modal .modal-content {
+  max-height: calc(100svh - 28px);
+  padding: 18px 14px 20px;
+  border-radius: 18px;
+}
+#success-modal .modal-title { font-size: clamp(18px, 5.6vw, 24px); }
+#success-modal .modal-message { font-size: 15px; line-height: 1.5; }
+#success-modal .mcard { padding: 12px; }
+
+/* Evitar “rayita”/artefacto en el borde derecho de iOS por subpixel */
+#welcome::after {
+  content:""; position:absolute; top:0; right:-1px; width:1px; height:100%;
+  background: transparent; pointer-events:none;
+}
+
+/* Ajustes de animación: menos movimiento en pantallas pequeñas */
+@media (max-width: 430px){
+  .bg-blob { filter: blur(16px); opacity:.45; }
+  .grain { opacity:.03; }
+}
+
+/* Safe-area: separaciones con barra inferior del navegador */
+.scroll-cue { bottom: max(16px, env(safe-area-inset-bottom)); }
