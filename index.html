@@ -4,6 +4,11 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <title>Valutazione Gratuita — Belvedere Investimenti</title>
+
+  <!-- Preload de la imagen móvil/desktop para “Chi siamo” -->
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop" media="(max-width: 768px)">
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2000&auto=format&fit=crop" media="(min-width: 769px)">
+
   <link rel="stylesheet" href="style.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -15,13 +20,13 @@
   <!-- =======================
        HERO / WELCOME
        ======================= -->
-  <section id="welcome" class="active">
-    <!-- Fondi/layers animati -->
-    <div class="bg-gradient"></div>
-    <div class="bg-blob blob-1"></div>
-    <div class="bg-blob blob-2"></div>
-    <div class="bg-blob blob-3"></div>
-    <div class="grain"></div>
+  <section id="welcome" class="active" aria-label="Benvenuto">
+    <!-- Fondi/layers animati (optim reducidos en mobile via media query) -->
+    <div class="bg-gradient" aria-hidden="true"></div>
+    <div class="bg-blob blob-1" aria-hidden="true"></div>
+    <div class="bg-blob blob-2" aria-hidden="true"></div>
+    <div class="bg-blob blob-3" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
 
     <div class="welcome-content reveal">
       <span class="tagline">VALUTAZIONE GRATUITA</span>
@@ -32,24 +37,24 @@
         Dietro Belvedere Investimenti c’è un <strong>ecosistema di specialisti</strong> — analisti, marketer, interior &amp; revenue manager — che lavora come un’unica macchina.
         Valutiamo, posizioniamo e gestiamo il tuo appartamento per massimizzare la resa, <em>senza attriti</em> per te.
       </p>
-      <ul class="value-points">
+      <ul class="value-points" aria-label="Punti di valore">
         <li>Analisi dati e pricing dinamico proprietario</li>
         <li>Marketing multicanale &amp; posizionamento premium</li>
         <li>Gestione end-to-end con reportistica trasparente</li>
       </ul>
 
       <div class="hero-ctas">
-        <button id="start-btn" class="btn-submit pulse">Inizia la valutazione</button>
-        <button id="go-about" class="link-soft-btn" aria-label="Scopri il nostro metodo">Scopri il nostro metodo</button>
+        <button id="start-btn" class="btn-submit pulse" type="button">Inizia la valutazione</button>
+        <button id="go-about" class="link-soft-btn" type="button" aria-label="Scopri il nostro metodo">Scopri il nostro metodo</button>
       </div>
 
       <div class="trust-row">
-        <span class="trust-dot"></span> Team d’élite, processi industrializzati, risultati misurabili
+        <span class="trust-dot" aria-hidden="true"></span> Team d’élite, processi industrializzati, risultati misurabili
       </div>
     </div>
 
     <!-- Flecha scroll -->
-    <button id="scroll-cue" class="scroll-cue" aria-label="Scorri giù">
+    <button id="scroll-cue" class="scroll-cue" type="button" aria-label="Scorri giù">
       <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 5v14M5 12l7 7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -59,8 +64,8 @@
   <!-- =======================
        ABOUT / CHI SIAMO
        ======================= -->
-  <section id="about" class="about">
-    <div class="about-overlay"></div>
+  <section id="about" class="about" aria-label="Chi siamo">
+    <div class="about-overlay" aria-hidden="true"></div>
     <div class="about-content reveal">
       <h2>Chi siamo</h2>
       <p class="lead">
@@ -77,47 +82,47 @@
         <li>Gestione end-to-end con report periodici</li>
       </ul>
 
-      <button id="goto-form" class="btn-submit about-cta">Richiedi la valutazione</button>
+      <button id="goto-form" class="btn-submit about-cta" type="button">Richiedi la valutazione</button>
     </div>
   </section>
 
   <!-- =======================
        FORM
        ======================= -->
-  <section id="form-section">
+  <section id="form-section" aria-label="Modulo di contatto">
     <div class="container reveal">
       <form id="contact-form" novalidate>
         <div class="form-grid">
           <div class="form-group full-width">
             <label for="nome-cognome">Nome e Cognome</label>
-            <input type="text" id="nome-cognome" name="Nome e Cognome" placeholder="Mario Rossi" required>
+            <input type="text" id="nome-cognome" name="Nome e Cognome" placeholder="Mario Rossi" required autocomplete="name" inputmode="text">
           </div>
 
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="Email" placeholder="mario.rossi@email.it" required>
+            <input type="email" id="email" name="Email" placeholder="mario.rossi@email.it" required autocomplete="email" inputmode="email">
           </div>
 
           <div class="form-group">
             <label for="telefono">Telefono</label>
-            <input type="tel" id="telefono" name="Telefono" placeholder="+39 123 4567890" inputmode="tel">
+            <input type="tel" id="telefono" name="Telefono" placeholder="+39 123 4567890" inputmode="tel" autocomplete="tel">
           </div>
 
           <div class="form-group">
             <label for="citta">Città</label>
-            <input type="text" id="citta" name="Città" placeholder="Milano">
+            <input type="text" id="citta" name="Città" placeholder="Milano" autocomplete="address-level2">
           </div>
 
           <div class="form-group">
             <label for="indirizzo">Indirizzo</label>
-            <input type="text" id="indirizzo" name="Indirizzo" placeholder="Via Roma, 1">
+            <input type="text" id="indirizzo" name="Indirizzo" placeholder="Via Roma, 1" autocomplete="street-address">
           </div>
 
           <!-- Rimossi: Camere / Bagni -->
 
           <div class="form-group full-width">
             <label for="messaggio">Messaggio</label>
-            <textarea id="messaggio" name="Messaggio" placeholder="Raccontaci di più sul tuo immobile o sugli obiettivi di rendimento..." rows="4"></textarea>
+            <textarea id="messaggio" name="Messaggio" placeholder="Raccontaci di più sul tuo immobile o sugli obiettivi di rendimento..." rows="4" inputmode="text"></textarea>
           </div>
 
           <div class="form-group full-width">
@@ -135,7 +140,7 @@
         <div class="privacy">
           <input type="checkbox" id="privacy" required>
           <label for="privacy">
-            Accetto la <a href="#" target="_blank">privacy policy</a> e il trattamento dei miei dati personali.
+            Accetto la <a href="#" target="_blank" rel="noopener">privacy policy</a> e il trattamento dei miei dati personali.
           </label>
         </div>
 
@@ -149,10 +154,10 @@
        ======================= -->
   <div id="success-modal" aria-hidden="true">
     <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <span class="close-btn" aria-label="Chiudi">&times;</span>
+      <button class="close-btn" type="button" aria-label="Chiudi">&times;</button>
 
       <div class="modal-header">
-        <div class="modal-icon">✨</div>
+        <div class="modal-icon" aria-hidden="true">✨</div>
         <h2 id="modal-title" class="modal-title">Richiesta inviata con successo</h2>
         <p class="modal-kicker">Benvenuto nel metodo Belvedere</p>
       </div>
@@ -182,7 +187,9 @@
        SCRIPTS
        ======================= -->
   <script>
-    // Elements
+    // Evita abrir con #hash (si el navegador restaura la última ancla)
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+
     const body = document.body;
     const welcome = document.getElementById('welcome');
     const about = document.getElementById('about');
@@ -197,54 +204,47 @@
     const successModal = document.getElementById('success-modal');
     const closeBtn = document.querySelector('.close-btn');
 
-    // 1) Siempre abrir en el HERO (evita que el navegador restaure #hash)
-    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
-
-    // 2) Reveal on scroll
+    // Reveal on scroll
     const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){ e.target.classList.add('revealed'); }
-      });
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('revealed'); });
     }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    // 3) Modo formulario: oculta HERO y ABOUT para que no "tapen" visualmente
+    // Flujo: ir a formulario (oculta hero/about en móvil/desktop)
     const enterFormMode = () => {
-      body.classList.add('form-mode'); // CSS controla visibilidad
-      // scroll al form
+      body.classList.add('form-mode');
       formSection.style.display = 'block';
       formSection.classList.add('fade-in');
       document.getElementById('form-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
 
-    // Botones
     startBtn.addEventListener('click', enterFormMode);
-    gotoFormBtn?.addEventListener('click', (e) => { e.preventDefault(); enterFormMode(); });
+    gotoFormBtn?.addEventListener('click', enterFormMode);
     goAbout?.addEventListener('click', () => {
-      document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      about?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
     scrollCue?.addEventListener('click', () => {
-      document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      about?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
-    // 4) Confetti
+    // Confetti (ligero)
     function createConfetti() {
       const confettiColors = ['#1EA0FF', '#7C4DFF', '#00D4FF', '#00E676', '#FFC400'];
-      for (let i = 0; i < 70; i++) {
+      for (let i = 0; i < 50; i++) {
         const confetti = document.createElement('div');
         confetti.classList.add('confetti');
         confetti.style.left = Math.random() * 100 + '%';
         confetti.style.top = Math.random() * 100 + '%';
-        confetti.style.animationDelay = (Math.random() * 0.6) + 's';
+        confetti.style.animationDelay = (Math.random() * 0.5) + 's';
         confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
-        confetti.style.setProperty('--x', (Math.random() - 0.5) * 240 + 'px');
-        confetti.style.setProperty('--y', (Math.random() * 260 + 120) + 'px');
+        confetti.style.setProperty('--x', (Math.random() - 0.5) * 200 + 'px');
+        confetti.style.setProperty('--y', (Math.random() * 220 + 100) + 'px');
         confetti.style.setProperty('--deg', Math.random() * 360 + 'deg');
         successModal.appendChild(confetti);
       }
     }
 
-    // 5) Envío (NO tocar el endpoint)
+    // Envío (NO modificar endpoint)
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
@@ -263,6 +263,7 @@
       const scriptURL = 'https://script.google.com/macros/s/AKfycbxKcVuJo7VdMc4KOf-5xoHXGHQXx1B50wywRo_roKvpmHL50M7ckcHHubUgX8nBQuN8/exec';
 
       successModal.classList.add('show');
+      body.classList.add('modal-open');  // bloquea scroll de fondo en móvil
       createConfetti();
       form.reset();
 
@@ -272,21 +273,19 @@
           headers: { 'Content-Type': 'text/plain' },
           body: JSON.stringify(formData),
         });
-        if (response.ok) {
-          console.log('Modulo inviato con successo!');
-        } else {
-          console.log('Errore nell’invio del modulo.');
-        }
-      } catch (error) {
+        console.log(response.ok ? 'Modulo inviato con successo!' : 'Errore nell’invio del modulo.');
+      } catch {
         console.log('Invio completato lato client (possibile errore di rete).');
       }
     });
 
-    closeBtn.addEventListener('click', () => {
+    const closeModal = () => {
       successModal.classList.remove('show');
-    });
+      body.classList.remove('modal-open');
+    };
+    closeBtn.addEventListener('click', closeModal);
     window.addEventListener('click', (event) => {
-      if (event.target === successModal) successModal.classList.remove('show');
+      if (event.target === successModal) closeModal();
     });
   </script>
 </body>
