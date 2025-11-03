@@ -1,199 +1,293 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valutazione Gratuita</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>Valutazione Gratuita — Belvedere Investimenti</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <meta name="description" content="Belvedere Investimenti: valutazione gratuita, posizionamento e gestione data–driven del tuo immobile per massimizzare la resa.">
 </head>
 <body>
 
-    <section id="welcome" class="active">
-        <div class="overlay"></div>
-        <div class="welcome-content">
-            <span class="tagline">VALUTAZIONE GRATUITA</span>
-            <h1>Affida il tuo immobile a Belvedere Investimenti</h1>
-            <p>
-                Ti sei mai chiesto quanto potresti guadagnare davvero dal tuo appartamento? 
-                Con Belvedere Investimenti trasformiamo ogni immobile in una rendita efficiente e senza stress. 
-                Il nostro team si occupa di tutto, dalla valutazione alla gestione. 
-                <br><br>
-                Compila il form per scoprire il potenziale reale della tua casa. 
-                Il tuo futuro inizia qui.
-            </p>
-            <button id="start-btn" class="btn-submit pulse">Avanti</button>
-        </div>
-    </section>
+  <!-- =======================
+       HERO / WELCOME
+       ======================= -->
+  <section id="welcome" class="active">
+    <!-- Fondi/layers animati -->
+    <div class="bg-gradient"></div>
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+    <div class="grain"></div>
 
-    <section id="form-section">
-        <div class="container">
-            <form id="contact-form">
-                <div class="form-grid">
-                    <div class="form-group full-width">
-                        <label for="nome-cognome">Nome e Cognome</label>
-                        <input type="text" id="nome-cognome" name="Nome e Cognome" placeholder="Mario Rossi" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="Email" placeholder="mario.rossi@email.it" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono">Telefono</label>
-                        <input type="tel" id="telefono" name="Telefono" placeholder="+39 123 4567890">
-                    </div>
-                    <div class="form-group">
-                        <label for="citta">Città</label>
-                        <input type="text" id="citta" name="Città" placeholder="Milano">
-                    </div>
-                    <div class="form-group">
-                        <label for="indirizzo">Indirizzo</label>
-                        <input type="text" id="indirizzo" name="Indirizzo" placeholder="Via Roma, 1">
-                    </div>
-                    <div class="form-group">
-                        <label for="camere">Camere</label>
-                        <input type="number" id="camere" name="Camere" placeholder="Numero di camere">
-                    </div>
-                    <div class="form-group">
-                        <label for="bagni">Bagni</label>
-                        <input type="number" id="bagni" name="Bagni" placeholder="Numero di bagni">
-                    </div>
-                    <div class="form-group full-width">
-                        <label for="messaggio">Messaggio</label>
-                        <textarea id="messaggio" name="Messaggio" placeholder="Scrivi qui il tuo messaggio..."></textarea>
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="conosciuti">Dove ci hai conosciuti?</label>
-                        <select id="conosciuti" name="Conosciuti">
-                            <option value="">Seleziona...</option>
-                            <option value="internet">Internet</option>
-                            <option value="social">Social Media</option>
-                            <option value="amici">Amici</option>
-                            <option value="qr-volantino">QR Code / Volantino</option>
-                        </select>
-                    </div>
-                </div>
+    <div class="welcome-content reveal">
+      <span class="tagline">VALUTAZIONE GRATUITA</span>
+      <h1>
+        Trasformiamo il tuo immobile in <span class="highlight">rendimento</span>.
+      </h1>
+      <p class="subhead">
+        Dietro Belvedere Investimenti c’è un <strong>ecosistema di specialisti</strong> — analisti, marketer, interior &amp; revenue manager — che lavora come un’unica macchina.
+        Valutiamo, posizioniamo e gestiamo il tuo appartamento per massimizzare la resa, <em>senza attriti</em> per te.
+      </p>
+      <ul class="value-points">
+        <li>Analisi dati e pricing dinamico proprietario</li>
+        <li>Marketing multicanale &amp; posizionamento premium</li>
+        <li>Gestione end-to-end con reportistica trasparente</li>
+      </ul>
 
-                <div class="privacy">
-                    <input type="checkbox" id="privacy" required>
-                    <label for="privacy">
-                        Accetto la <a href="#" target="_blank">privacy policy</a> e il trattamento dei miei dati personali.
-                    </label>
-                </div>
+      <div class="hero-ctas">
+        <button id="start-btn" class="btn-submit pulse">Inizia la valutazione</button>
+        <button id="go-about" class="link-soft-btn" aria-label="Scopri il nostro metodo">Scopri il nostro metodo</button>
+      </div>
 
-                <button type="submit" class="btn-submit">Invia</button>
-            </form>
-        </div>
-    </section>
-
-    <div id="success-modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <div class="modal-body">
-                <h2 class="modal-title">Fantastico! 🎉</h2>
-                <p class="modal-message">
-                    Grazie per la tua richiesta.
-                </p>
-                <p class="modal-phrase">
-                    Il primo passo verso la tua rendita passiva è stato fatto.
-                </p>
-            </div>
-        </div>
+      <div class="trust-row">
+        <span class="trust-dot"></span> Team d’élite, processi industrializzati, risultati misurabili
+      </div>
     </div>
 
-<script>
-const welcome = document.getElementById('welcome');
-const formSection = document.getElementById('form-section');
-const startBtn = document.getElementById('start-btn');
-const form = document.getElementById('contact-form');
-const successModal = document.getElementById('success-modal');
-const closeBtn = document.querySelector('.close-btn');
+    <!-- Flecha scroll -->
+    <button id="scroll-cue" class="scroll-cue" aria-label="Scorri giù">
+      <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 5v14M5 12l7 7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </section>
 
-startBtn.addEventListener('click', () => {
-    welcome.classList.add('fade-out');
-    setTimeout(() => {
-        welcome.style.display = 'none';
-        formSection.style.display = 'block';
-        formSection.classList.add('fade-in');
-    }, 500);
-});
+  <!-- =======================
+       ABOUT / CHI SIAMO
+       ======================= -->
+  <section id="about" class="about">
+    <div class="about-overlay"></div>
+    <div class="about-content reveal">
+      <h2>Chi siamo</h2>
+      <p class="lead">
+        Belvedere Investimenti è un team con ampia esperienza in <strong>remodeling</strong>,
+        <strong>posizionamento premium</strong> e <strong>gestione data–driven</strong> di appartamenti.
+        Combiniamo analisi, design e marketing per trasformare immobili in asset ad alto rendimento,
+        con processi chiari e trasparenza totale.
+      </p>
 
-function createConfetti() {
-    const confettiColors = ['#f00', '#0f0', '#00f', '#ff0', '#f0f', '#0ff'];
-    for (let i = 0; i < 50; i++) {
-        const confetti = document.createElement('div');
-        confetti.classList.add('confetti');
-        
-        // Posicionamiento relativo al modal
-        confetti.style.left = Math.random() * 100 + '%';
-        confetti.style.top = Math.random() * 100 + '%';
-        
-        confetti.style.animationDelay = Math.random() * 0.5 + 's';
-        confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
-        
-        // Las variables CSS para la animación se mantienen
-        confetti.style.setProperty('--x', (Math.random() - 0.5) * 200 + 'px');
-        confetti.style.setProperty('--y', Math.random() * 200 + 'px');
-        confetti.style.setProperty('--deg', Math.random() * 360 + 'deg');
-        
-        successModal.appendChild(confetti);
-    }
-}
+      <ul class="about-points">
+        <li>Progettazione e ristrutturazione orientate al ROI</li>
+        <li>Branding dell’immobile e distribuzione multicanale</li>
+        <li>Pricing dinamico e KPI condivisi</li>
+        <li>Gestione end-to-end con report periodici</li>
+      </ul>
 
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
+      <button id="goto-form" class="btn-submit about-cta">Richiedi la valutazione</button>
+    </div>
+  </section>
 
-  const formData = {
-    NomeCognome: document.getElementById('nome-cognome').value,
-    Email: document.getElementById('email').value,
-    Telefono: document.getElementById('telefono').value,
-    Città: document.getElementById('citta').value,
-    Indirizzo: document.getElementById('indirizzo').value,
-    Camere: document.getElementById('camere').value,
-    Bagni: document.getElementById('bagni').value,
-    Messaggio: document.getElementById('messaggio').value,
-    Conosciuti: document.getElementById('conosciuti').value
-  };
+  <!-- =======================
+       FORM
+       ======================= -->
+  <section id="form-section">
+    <div class="container reveal">
+      <form id="contact-form" novalidate>
+        <div class="form-grid">
+          <div class="form-group full-width">
+            <label for="nome-cognome">Nome e Cognome</label>
+            <input type="text" id="nome-cognome" name="Nome e Cognome" placeholder="Mario Rossi" required>
+          </div>
 
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxKcVuJo7VdMc4KOf-5xoHXGHQXx1B50wywRo_roKvpmHL50M7ckcHHubUgX8nBQuN8/exec';
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="Email" placeholder="mario.rossi@email.it" required>
+          </div>
 
-  successModal.classList.add('show');
-  createConfetti();
-  form.reset();
-  try {
-    const response = await fetch(scriptURL, {
-      method: 'POST',
-      // ⚠️ Cambio clave: Usamos 'text/plain' para evitar el error de CORS.
-      headers: { 'Content-Type': 'text/plain' },
-      body: JSON.stringify(formData),
+          <div class="form-group">
+            <label for="telefono">Telefono</label>
+            <input type="tel" id="telefono" name="Telefono" placeholder="+39 123 4567890" inputmode="tel">
+          </div>
+
+          <div class="form-group">
+            <label for="citta">Città</label>
+            <input type="text" id="citta" name="Città" placeholder="Milano">
+          </div>
+
+          <div class="form-group">
+            <label for="indirizzo">Indirizzo</label>
+            <input type="text" id="indirizzo" name="Indirizzo" placeholder="Via Roma, 1">
+          </div>
+
+          <!-- Rimossi: Camere / Bagni -->
+
+          <div class="form-group full-width">
+            <label for="messaggio">Messaggio</label>
+            <textarea id="messaggio" name="Messaggio" placeholder="Raccontaci di più sul tuo immobile o sugli obiettivi di rendimento..." rows="4"></textarea>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="conosciuti">Dove ci hai conosciuti?</label>
+            <select id="conosciuti" name="Conosciuti">
+              <option value="">Seleziona...</option>
+              <option value="internet">Internet</option>
+              <option value="social">Social Media</option>
+              <option value="amici">Amici</option>
+              <option value="qr-volantino">QR Code / Volantino</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="privacy">
+          <input type="checkbox" id="privacy" required>
+          <label for="privacy">
+            Accetto la <a href="#" target="_blank">privacy policy</a> e il trattamento dei miei dati personali.
+          </label>
+        </div>
+
+        <button type="submit" class="btn-submit">Invia</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- =======================
+       SUCCESS MODAL
+       ======================= -->
+  <div id="success-modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <span class="close-btn" aria-label="Chiudi">&times;</span>
+
+      <div class="modal-header">
+        <div class="modal-icon">✨</div>
+        <h2 id="modal-title" class="modal-title">Richiesta inviata con successo</h2>
+        <p class="modal-kicker">Benvenuto nel metodo Belvedere</p>
+      </div>
+
+      <div class="modal-body">
+        <p class="modal-message">
+          Stiamo predisponendo un’<strong>analisi personalizzata</strong> del tuo immobile con indicazioni di pricing, posizionamento e proiezioni di rendimento.
+        </p>
+        <div class="modal-cards">
+          <div class="mcard">
+            <span class="mhead">Cosa succede ora</span>
+            <p>Un consulente dedicato ti contatterà a breve per allineamento e priorità.</p>
+          </div>
+          <div class="mcard">
+            <span class="mhead">Il nostro impegno</span>
+            <p>Massima trasparenza, processi chiari e KPI misurabili in ogni fase.</p>
+          </div>
+        </div>
+        <p class="modal-phrase">
+          “L’eccellenza non è un caso: è un sistema.”
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================
+       SCRIPTS
+       ======================= -->
+  <script>
+    // Elements
+    const body = document.body;
+    const welcome = document.getElementById('welcome');
+    const about = document.getElementById('about');
+    const formSection = document.getElementById('form-section');
+
+    const startBtn = document.getElementById('start-btn');
+    const goAbout = document.getElementById('go-about');
+    const scrollCue = document.getElementById('scroll-cue');
+    const gotoFormBtn = document.getElementById('goto-form');
+
+    const form = document.getElementById('contact-form');
+    const successModal = document.getElementById('success-modal');
+    const closeBtn = document.querySelector('.close-btn');
+
+    // 1) Siempre abrir en el HERO (evita que el navegador restaure #hash)
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+
+    // 2) Reveal on scroll
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('revealed'); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // 3) Modo formulario: oculta HERO y ABOUT para que no "tapen" visualmente
+    const enterFormMode = () => {
+      body.classList.add('form-mode'); // CSS controla visibilidad
+      // scroll al form
+      formSection.style.display = 'block';
+      formSection.classList.add('fade-in');
+      document.getElementById('form-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    // Botones
+    startBtn.addEventListener('click', enterFormMode);
+    gotoFormBtn?.addEventListener('click', (e) => { e.preventDefault(); enterFormMode(); });
+    goAbout?.addEventListener('click', () => {
+      document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    scrollCue?.addEventListener('click', () => {
+      document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
-    if (response.ok) {
-      console.add('Modulo inviato con successo!');
-    } else {
-     console.add('Errore al inviare il modulo.');
+    // 4) Confetti
+    function createConfetti() {
+      const confettiColors = ['#1EA0FF', '#7C4DFF', '#00D4FF', '#00E676', '#FFC400'];
+      for (let i = 0; i < 70; i++) {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.top = Math.random() * 100 + '%';
+        confetti.style.animationDelay = (Math.random() * 0.6) + 's';
+        confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+        confetti.style.setProperty('--x', (Math.random() - 0.5) * 240 + 'px');
+        confetti.style.setProperty('--y', (Math.random() * 260 + 120) + 'px');
+        confetti.style.setProperty('--deg', Math.random() * 360 + 'deg');
+        successModal.appendChild(confetti);
+      }
     }
-  } catch (error) {
-    console.add('Modulo inviato con successo!');
-    
-  }
 
-});
+    // 5) Envío (NO tocar el endpoint)
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-closeBtn.addEventListener('click', () => {
-  successModal.classList.remove('show');
-});
+      const formData = {
+        NomeCognome: document.getElementById('nome-cognome')?.value || '',
+        Email: document.getElementById('email')?.value || '',
+        Telefono: document.getElementById('telefono')?.value || '',
+        Città: document.getElementById('citta')?.value || '',
+        Indirizzo: document.getElementById('indirizzo')?.value || '',
+        Camere: document.getElementById('camere')?.value || '',
+        Bagni: document.getElementById('bagni')?.value || '',
+        Messaggio: document.getElementById('messaggio')?.value || '',
+        Conosciuti: document.getElementById('conosciuti')?.value || ''
+      };
 
-window.addEventListener('click', (event) => {
-    if (event.target === successModal) {
-        successModal.classList.remove('show');
-    }
-});
-</script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxKcVuJo7VdMc4KOf-5xoHXGHQXx1B50wywRo_roKvpmHL50M7ckcHHubUgX8nBQuN8/exec';
 
+      successModal.classList.add('show');
+      createConfetti();
+      form.reset();
+
+      try {
+        const response = await fetch(scriptURL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify(formData),
+        });
+        if (response.ok) {
+          console.log('Modulo inviato con successo!');
+        } else {
+          console.log('Errore nell’invio del modulo.');
+        }
+      } catch (error) {
+        console.log('Invio completato lato client (possibile errore di rete).');
+      }
+    });
+
+    closeBtn.addEventListener('click', () => {
+      successModal.classList.remove('show');
+    });
+    window.addEventListener('click', (event) => {
+      if (event.target === successModal) successModal.classList.remove('show');
+    });
+  </script>
 </body>
 </html>
