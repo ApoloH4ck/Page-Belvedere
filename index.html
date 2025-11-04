@@ -2,64 +2,60 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Belvedere Investimenti — Valutazione Gratuita</title>
-  <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
-<!-- Bloqueo de formulario por defecto -->
 <body class="is-form-locked">
 
-  <!-- HERO -->
-  <header id="hero" class="section">
-    <div class="hero-bg"></div>
+  <!-- ====== VISTA HOME ====== -->
+  <div id="home-view" class="view active">
+    <header id="hero" class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-waves"></div>
 
-    <!-- blobs decorativos WOW -->
-    <div class="blob blob-a" aria-hidden="true"></div>
-    <div class="blob blob-b" aria-hidden="true"></div>
+      <!-- blobs decorativos -->
+      <div class="blob blob-a" aria-hidden="true"></div>
+      <div class="blob blob-b" aria-hidden="true"></div>
 
-    <div class="hero-inner container">
-      <span class="badge">VALUTAZIONE GRATUITA</span>
-      <h1 class="h1">
-        Trasformiamo il tuo<br>
-        immobile in<br>
-        <span class="accent">rendimento.</span>
-      </h1>
-      <p class="lead">
-        Dietro Belvedere Investimenti c’è un <strong>ecosistema di specialisti</strong> — analisti,
-        marketer, interior &amp; revenue manager — che lavora come un’unica macchina.
-        Valutiamo, posizioniamo e gestiamo il tuo appartamento per massimizzare la resa,
-        <em>senza attriti</em> per te.
-      </p>
+      <div class="hero-inner container">
+        <span class="tag">VALUTAZIONE GRATUITA</span>
+        <h1 class="display">
+          Trasformiamo il tuo immobile in <span class="accent">rendimento</span>.
+        </h1>
+        <p class="lead">
+          Dietro Belvedere Investimenti c’è un <strong>ecosistema di specialisti</strong> — analisti,
+          marketer, interior &amp; revenue manager — che lavora come un’unica macchina.
+          Valutiamo, posizioniamo e gestiamo il tuo appartamento per massimizzare la resa,
+          <em>senza attriti</em> per te.
+        </p>
 
-      <ul class="pill-list">
-        <li class="pill">Analisi dati e pricing dinamico proprietario</li>
-        <li class="pill">Marketing multicanale &amp; posizionamento premium</li>
-        <li class="pill">Gestione end-to-end con reportistica trasparente</li>
-      </ul>
+        <div class="pill-list">
+          <div class="pill">Analisi dati e pricing dinamico proprietario</div>
+          <div class="pill">Marketing multicanale &amp; posizionamento premium</div>
+          <div class="pill">Gestione end-to-end con reportistica trasparente</div>
+        </div>
 
-      <div class="hero-ctas">
-        <button class="btn btn-primary js-open-form">Inizia la valutazione</button>
+        <div class="cta-row">
+          <a class="btn btn-primary js-open-form" href="#form">Inizia la valutazione</a>
+          <button class="scroll-arrow" aria-label="Scorri" data-scroll="#about">
+            <span class="arrow">↓</span>
+          </button>
+        </div>
 
-        <!-- Flecha con animación -->
-        <button class="scroll-down" aria-label="Scorri giù" data-scroll="#about">
-          <span class="arrow">↓</span>
-        </button>
+        <p class="footnote">Team d’élite, processi industrializzati, risultati misurabili</p>
       </div>
-      <p class="subnote">Team d’élite, processi industrializzati, risultati misurabili</p>
 
-      <!-- barrido luminoso WOW -->
-      <span class="light-sweep" aria-hidden="true"></span>
-    </div>
-  </header>
+      <!-- divisor difuminado hacia la siguiente sección -->
+      <div class="fade-divider"></div>
+    </header>
 
-  <!-- CHI SIAMO -->
-  <section id="about" class="section about">
-    <div class="about-bg"></div>
-    <div class="container">
-      <div class="card card-glass">
+    <section id="about" class="about has-parallax">
+      <div class="about-bg" role="presentation" aria-hidden="true"></div>
+      <div class="container about-card">
         <h2 class="h2">Chi siamo</h2>
         <p class="body">
           Belvedere Investimenti è un team con ampia esperienza in <strong>remodeling</strong>,
@@ -68,56 +64,61 @@
           con processi chiari e trasparenza totale.
         </p>
 
-        <ul class="grid-bullets">
-          <li>Progettazione e ristrutturazione orientate al ROI</li>
-          <li>Branding dell’immobile e distribuzione multicanale</li>
-          <li>Pricing dinamico e KPI condivisi</li>
-          <li>Gestione end-to-end con report periodici</li>
-        </ul>
+        <div class="chip-grid">
+          <div class="chip">Progettazione e ristrutturazione orientate al ROI</div>
+          <div class="chip">Branding dell’immobile e distribuzione multicanale</div>
+          <div class="chip">Pricing dinamico e KPI condivisi</div>
+          <div class="chip">Gestione end-to-end con report periodici</div>
+        </div>
 
-        <button class="btn btn-primary btn-block-m js-open-form">Richiedi la valutazione</button>
+        <a class="btn btn-primary js-open-form" href="#form">Richiedi la valutazione</a>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
-  <!-- FORM (bloqueado hasta que se pulse CTA) -->
-  <section id="form-section" class="section section-form" hidden>
-    <div class="container">
-      <form id="contact-form" class="form">
-        <div class="form-grid">
-          <div class="form-group full">
-            <label for="nome-cognome">Nome e Cognome</label>
-            <input type="text" id="nome-cognome" name="Nome e Cognome" placeholder="Mario Rossi" required>
-          </div>
+  <!-- ====== VISTA FORM (página interna SPA) ====== -->
+  <div id="form-view" class="view" aria-hidden="true">
+    <header class="form-hero">
+      <div class="container">
+        <h1 class="h2">Inizia la tua valutazione gratuita</h1>
+        <p class="body soft">Compila il modulo: pochi dettagli per costruire un’analisi personalizzata.</p>
+      </div>
+    </header>
 
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="Email" placeholder="mario.rossi@email.it" required>
-          </div>
+    <main class="section">
+      <div class="container">
+        <form id="contact-form" class="card form">
+          <div class="form-grid">
+            <div class="form-group full">
+              <label for="nome-cognome">Nome e Cognome</label>
+              <input type="text" id="nome-cognome" name="Nome e Cognome" placeholder="Mario Rossi" required>
+            </div>
 
-          <div class="form-group">
-            <label for="telefono">Telefono</label>
-            <input type="tel" id="telefono" name="Telefono" placeholder="+39 123 4567890">
-          </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="Email" placeholder="mario.rossi@email.it" required>
+            </div>
+            <div class="form-group">
+              <label for="telefono">Telefono</label>
+              <input type="tel" id="telefono" name="Telefono" placeholder="+39 123 4567890">
+            </div>
 
-          <div class="form-group">
-            <label for="citta">Città</label>
-            <input type="text" id="citta" name="Città" placeholder="Milano">
-          </div>
+            <div class="form-group">
+              <label for="citta">Città</label>
+              <input type="text" id="citta" name="Città" placeholder="Milano">
+            </div>
+            <div class="form-group">
+              <label for="indirizzo">Indirizzo</label>
+              <input type="text" id="indirizzo" name="Indirizzo" placeholder="Via Roma, 1">
+            </div>
 
-          <div class="form-group">
-            <label for="indirizzo">Indirizzo</label>
-            <input type="text" id="indirizzo" name="Indirizzo" placeholder="Via Roma, 1">
-          </div>
+            <div class="form-group full">
+              <label for="messaggio">Messaggio</label>
+              <textarea id="messaggio" name="Messaggio" placeholder="Raccontaci di più sul tuo immobile o sugli obiettivi di rendimento..."></textarea>
+            </div>
 
-          <div class="form-group full">
-            <label for="messaggio">Messaggio</label>
-            <textarea id="messaggio" name="Messaggio" placeholder="Raccontaci di più sul tuo immobile o sugli obiettivi di rendimento..."></textarea>
-          </div>
-
-          <div class="form-group full">
-            <label for="conosciuti">Dove ci hai conosciuti?</label>
-            <div class="select-wrap">
+            <div class="form-group full">
+              <label for="conosciuti">Dove ci hai conosciuti?</label>
               <select id="conosciuti" name="Conosciuti">
                 <option value="">Seleziona...</option>
                 <option value="internet">Internet</option>
@@ -125,25 +126,25 @@
                 <option value="amici">Amici</option>
                 <option value="qr-volantino">QR Code / Volantino</option>
               </select>
-              <span class="chev">▾</span>
             </div>
           </div>
-        </div>
 
-        <div class="privacy">
-          <input type="checkbox" id="privacy" required>
-          <label for="privacy" class="privacy-text">
-            Accetto la <a href="#" target="_blank" rel="noopener">privacy policy</a> e il trattamento dei miei dati personali.
+          <label class="consent">
+            <input type="checkbox" id="privacy" required>
+            <span>Accetto la <a href="#" target="_blank" rel="noopener">privacy policy</a> e il trattamento dei miei dati personali.</span>
           </label>
-        </div>
 
-        <button type="submit" class="btn btn-primary btn-send">Invia</button>
-      </form>
-    </div>
-  </section>
+          <div class="btn-row">
+            <button type="submit" class="btn btn-primary">Invia</button>
+            <a href="#home" class="btn btn-ghost js-go-home">Torna alla home</a>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
 
-  <!-- MODAL SUCCESS -->
-  <div id="success-modal" class="modal">
+  <!-- ====== MODAL SUCCESS + FX ====== -->
+  <div id="success-modal" class="modal" aria-hidden="true">
     <div class="modal-card">
       <button class="modal-close" aria-label="Chiudi">×</button>
       <div class="modal-body">
@@ -162,67 +163,121 @@
         </div>
 
         <p class="quote">“L’eccellenza non è un caso: è un sistema.”</p>
+
+        <div class="modal-actions">
+          <button id="modal-back" class="btn btn-primary">Torna su</button>
+        </div>
       </div>
     </div>
+    <!-- FX layers -->
+    <div id="confetti-layer"></div>
+    <canvas id="fireworks"></canvas>
   </div>
 
   <script>
-    // Smooth scroll helper
+    /* ====== UTIL ====== */
+    const $ = (sel, root=document) => root.querySelector(sel);
+    const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
     const smoothTo = (el) => el && el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    // Botón flecha -> about
-    document.querySelectorAll('[data-scroll]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const target = document.querySelector(btn.dataset.scroll);
+    /* ====== TRANSICIÓN DIFUMINADA HERO -> ABOUT ====== */
+    const hero = $('#hero');
+    const fadeDivider = $('.fade-divider');
+    const fadeObs = new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) fadeDivider.classList.add('active');
+      else fadeDivider.classList.remove('active');
+    }, { threshold: 0, rootMargin: "-20% 0px -70% 0px" });
+    fadeObs.observe(hero);
+
+    /* ====== SCROLL A ABOUT ====== */
+    $$('[data-scroll]').forEach(b => {
+      b.addEventListener('click', () => {
+        const target = $(b.dataset.scroll);
         smoothTo(target);
       });
     });
 
-    // Abrir/form: solo mediante botones (bloquea el acceso por scroll)
+    /* ====== SPA: HOME <-> FORM ====== */
     const body = document.body;
-    const formSection = document.getElementById('form-section');
+    const views = { home: $('#home-view'), form: $('#form-view') };
 
-    function openForm() {
-      body.classList.remove('is-form-locked');
-      formSection.hidden = false;
-      formSection.classList.add('reveal');
-      smoothTo(formSection);
+    function showView(name){
+      Object.values(views).forEach(v => v.classList.remove('active'));
+      views[name].classList.add('active');
+      // Bloquear/desbloquear acceso al form por scroll
+      if (name === 'form') {
+        body.classList.remove('is-form-locked');
+        views.form.setAttribute('aria-hidden', 'false');
+        location.hash = '#form';
+        smoothTo(views.form);
+      } else {
+        body.classList.add('is-form-locked');
+        views.form.setAttribute('aria-hidden', 'true');
+        location.hash = '#home';
+        smoothTo(views.home);
+      }
     }
 
-    document.querySelectorAll('.js-open-form').forEach(btn => {
-      btn.addEventListener('click', openForm);
+    // Botones que abren el form
+    $$('.js-open-form').forEach(btn => btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      showView('form');
+    }));
+
+    // Botón volver
+    $('.js-go-home')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      showView('home');
     });
 
-    // Impide llegar al formulario por hash/scroll si está bloqueado
-    window.addEventListener('hashchange', (e) => {
-      if (location.hash === '#form-section' && body.classList.contains('is-form-locked')) {
-        e.preventDefault();
-        history.replaceState('', document.title, window.location.pathname + window.location.search);
-        smoothTo(document.getElementById('hero'));
-      }
+    // Navegación por hash (permite compartir /form)
+    window.addEventListener('load', () => {
+      if (location.hash === '#form') showView('form');
+      else showView('home');
+    });
+    window.addEventListener('hashchange', () => {
+      if (location.hash === '#form') showView('form');
+      else showView('home');
     });
 
-    // FORM (NO TOCAR: envío a Google Sheets se mantiene)
-    const form = document.getElementById('contact-form');
-    const successModal = document.getElementById('success-modal');
-    const closeBtn = document.querySelector('.modal-close');
+    /* ====== FORM SUBMIT (mantener URL Sheets) ====== */
+    const form = $('#contact-form');
+    const successModal = $('#success-modal');
+    const closeBtn = $('.modal-close');
+    const backBtn = $('#modal-back');
+
+    function openModal(){
+      successModal.classList.add('show');
+      launchConfetti(100);
+      startFireworks();
+    }
+    function closeModal(){
+      successModal.classList.remove('show');
+      stopFireworks();
+      clearConfetti();
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    backBtn.addEventListener('click', () => { closeModal(); showView('home'); });
+    window.addEventListener('click', (e)=>{ if (e.target === successModal) { closeModal(); showView('home'); }});
+    window.addEventListener('keydown', (e)=>{ if (e.key === 'Escape' && successModal.classList.contains('show')) { closeModal(); showView('home'); }});
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const formData = {
-        NomeCognome: document.getElementById('nome-cognome').value,
-        Email: document.getElementById('email').value,
-        Telefono: document.getElementById('telefono').value,
-        Città: document.getElementById('citta').value,
-        Indirizzo: document.getElementById('indirizzo').value,
-        Messaggio: document.getElementById('messaggio').value,
-        Conosciuti: document.getElementById('conosciuti').value
+        NomeCognome: $('#nome-cognome').value,
+        Email: $('#email').value,
+        Telefono: $('#telefono').value,
+        Città: $('#citta').value,
+        Indirizzo: $('#indirizzo').value,
+        Messaggio: $('#messaggio').value,
+        Conosciuti: $('#conosciuti').value
       };
 
       const scriptURL = 'https://script.google.com/macros/s/AKfycbxKcVuJo7VdMc4KOf-5xoHXGHQXx1B50wywRo_roKvpmHL50M7ckcHHubUgX8nBQuN8/exec';
 
-      successModal.classList.add('show');
+      openModal();
       form.reset();
 
       try {
@@ -231,13 +286,79 @@
           headers: { 'Content-Type': 'text/plain' },
           body: JSON.stringify(formData),
         });
-      } catch (err) {}
+      } catch (err) { /* silencioso */ }
     });
 
-    closeBtn.addEventListener('click', () => successModal.classList.remove('show'));
-    window.addEventListener('click', (e) => {
-      if (e.target === successModal) successModal.classList.remove('show');
-    });
+    /* ====== CONFETTI ====== */
+    const confettiLayer = $('#confetti-layer');
+    function launchConfetti(count=60){
+      const colors = ['#4f46e5','#22d3ee','#60a5fa','#e879f9','#34d399','#f59e0b'];
+      for (let i = 0; i < count; i++) {
+        const c = document.createElement('div');
+        c.className = 'confetti';
+        c.style.left = Math.random()*100 + '%';
+        c.style.background = colors[Math.floor(Math.random()*colors.length)];
+        c.style.width = c.style.height = (6+Math.random()*8) + 'px';
+        c.style.setProperty('--dx', (Math.random()*2-1)*220 + 'px');
+        c.style.setProperty('--dy', (220+Math.random()*320) + 'px');
+        c.style.setProperty('--rot', (Math.random()*720-360) + 'deg');
+        c.style.animationDelay = (Math.random()*0.4)+'s';
+        confettiLayer.appendChild(c);
+      }
+    }
+    function clearConfetti(){ confettiLayer.innerHTML=''; }
+
+    /* ====== FIREWORKS (canvas ligero) ====== */
+    const canvas = $('#fireworks');
+    const ctx = canvas.getContext('2d');
+    let fwRAF = null, particles = [];
+
+    function resizeCanvas(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resizeCanvas);
+
+    function spawnFirework(){
+      const x = Math.random()*canvas.width*0.8 + canvas.width*0.1;
+      const y = Math.random()*canvas.height*0.4 + canvas.height*0.2;
+      const n = 36;
+      const hue = Math.floor(Math.random()*360);
+      for (let i=0;i<n;i++){
+        const angle = (Math.PI*2) * (i/n);
+        particles.push({
+          x, y,
+          vx: Math.cos(angle)*(1.5+Math.random()*2.5),
+          vy: Math.sin(angle)*(1.5+Math.random()*2.5),
+          life: 50+Math.random()*20,
+          color: `hsl(${hue+(Math.random()*20-10)}, 90%, 60%)`
+        });
+      }
+    }
+    function drawFireworks(){
+      ctx.fillStyle = 'rgba(0,0,0,0.2)';
+      ctx.fillRect(0,0,canvas.width,canvas.height);
+      particles.forEach(p=>{
+        ctx.beginPath();
+        ctx.fillStyle = p.color;
+        ctx.arc(p.x, p.y, 2, 0, Math.PI*2);
+        ctx.fill();
+        p.x += p.vx; p.y += p.vy;
+        p.vy += 0.02; // gravedad suave
+        p.life -= 1;
+      });
+      particles = particles.filter(p => p.life > 0);
+      if (Math.random() < 0.06) spawnFirework();
+      fwRAF = requestAnimationFrame(drawFireworks);
+    }
+    function startFireworks(){
+      resizeCanvas();
+      canvas.classList.add('on');
+      if (!fwRAF) fwRAF = requestAnimationFrame(drawFireworks);
+    }
+    function stopFireworks(){
+      canvas.classList.remove('on');
+      if (fwRAF) cancelAnimationFrame(fwRAF);
+      fwRAF = null; particles = [];
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+    }
   </script>
 </body>
 </html>
