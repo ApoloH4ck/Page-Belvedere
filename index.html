@@ -9,11 +9,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<!-- Bloqueo de formulario por defecto -->
+<body class="is-form-locked">
 
   <!-- HERO -->
   <header id="hero" class="section">
     <div class="hero-bg"></div>
+
+    <!-- blobs decorativos WOW -->
+    <div class="blob blob-a" aria-hidden="true"></div>
+    <div class="blob blob-b" aria-hidden="true"></div>
+
     <div class="hero-inner container">
       <span class="badge">VALUTAZIONE GRATUITA</span>
       <h1 class="h1">
@@ -35,12 +41,17 @@
       </ul>
 
       <div class="hero-ctas">
-        <a class="btn btn-primary" href="#form-section">Inizia la valutazione</a>
+        <button class="btn btn-primary js-open-form">Inizia la valutazione</button>
+
+        <!-- Flecha con animación -->
         <button class="scroll-down" aria-label="Scorri giù" data-scroll="#about">
-          ↓
+          <span class="arrow">↓</span>
         </button>
       </div>
       <p class="subnote">Team d’élite, processi industrializzati, risultati misurabili</p>
+
+      <!-- barrido luminoso WOW -->
+      <span class="light-sweep" aria-hidden="true"></span>
     </div>
   </header>
 
@@ -64,13 +75,13 @@
           <li>Gestione end-to-end con report periodici</li>
         </ul>
 
-        <a class="btn btn-primary btn-block-m" href="#form-section">Richiedi la valutazione</a>
+        <button class="btn btn-primary btn-block-m js-open-form">Richiedi la valutazione</button>
       </div>
     </div>
   </section>
 
-  <!-- FORM -->
-  <section id="form-section" class="section section-form">
+  <!-- FORM (bloqueado hasta que se pulse CTA) -->
+  <section id="form-section" class="section section-form" hidden>
     <div class="container">
       <form id="contact-form" class="form">
         <div class="form-grid">
@@ -156,21 +167,39 @@
   </div>
 
   <script>
-    // Smooth scroll
+    // Smooth scroll helper
+    const smoothTo = (el) => el && el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Botón flecha -> about
     document.querySelectorAll('[data-scroll]').forEach(btn => {
-      btn.addEventListener('click', (e) => {
+      btn.addEventListener('click', () => {
         const target = document.querySelector(btn.dataset.scroll);
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        smoothTo(target);
       });
     });
 
-    // Also scroll arrow inside hero
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href');
-        const el = document.querySelector(id);
-        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
-      });
+    // Abrir/form: solo mediante botones (bloquea el acceso por scroll)
+    const body = document.body;
+    const formSection = document.getElementById('form-section');
+
+    function openForm() {
+      body.classList.remove('is-form-locked');
+      formSection.hidden = false;
+      formSection.classList.add('reveal');
+      smoothTo(formSection);
+    }
+
+    document.querySelectorAll('.js-open-form').forEach(btn => {
+      btn.addEventListener('click', openForm);
+    });
+
+    // Impide llegar al formulario por hash/scroll si está bloqueado
+    window.addEventListener('hashchange', (e) => {
+      if (location.hash === '#form-section' && body.classList.contains('is-form-locked')) {
+        e.preventDefault();
+        history.replaceState('', document.title, window.location.pathname + window.location.search);
+        smoothTo(document.getElementById('hero'));
+      }
     });
 
     // FORM (NO TOCAR: envío a Google Sheets se mantiene)
@@ -193,25 +222,19 @@
 
       const scriptURL = 'https://script.google.com/macros/s/AKfycbxKcVuJo7VdMc4KOf-5xoHXGHQXx1B50wywRo_roKvpmHL50M7ckcHHubUgX8nBQuN8/exec';
 
-      // UX: abre modal y limpia
       successModal.classList.add('show');
       form.reset();
 
       try {
-        const response = await fetch(scriptURL, {
+        await fetch(scriptURL, {
           method: 'POST',
           headers: { 'Content-Type': 'text/plain' },
           body: JSON.stringify(formData),
         });
-        // Silencioso para mantener UX
-      } catch (err) {
-        // Silencioso también
-      }
+      } catch (err) {}
     });
 
-    closeBtn.addEventListener('click', () => {
-      successModal.classList.remove('show');
-    });
+    closeBtn.addEventListener('click', () => successModal.classList.remove('show'));
     window.addEventListener('click', (e) => {
       if (e.target === successModal) successModal.classList.remove('show');
     });
