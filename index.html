@@ -135,8 +135,9 @@
           </label>
 
           <div class="btn-row">
-            <button type="submit" class="btn btn-primary">Invia</button>
-            <a href="#home" class="btn btn-ghost js-go-home">Torna alla home</a>
+            <!-- AUMENTADO con btn-lg -->
+            <button type="submit" class="btn btn-primary btn-lg">Invia</button>
+            <a href="#home" class="btn btn-ghost btn-lg js-go-home">Torna alla home</a>
           </div>
         </form>
       </div>
@@ -144,35 +145,42 @@
   </div>
 
   <!-- ====== MODAL SUCCESS + FX ====== -->
-  <div id="success-modal" class="modal" aria-hidden="true">
-    <div class="modal-card">
-      <button class="modal-close" aria-label="Chiudi">×</button>
-      <div class="modal-body">
-        <div class="emoji">✨</div>
-        <h3 class="h3">Richiesta inviata con successo</h3>
-        <p class="body soft">Benvenuto nel metodo Belvedere</p>
+<div id="success-modal" class="modal" aria-hidden="true">
+  <div class="modal-card">
+    <button class="modal-close" aria-label="Chiudi">×</button>
+    <div class="modal-body">
+      <div class="emoji">✨</div>
+      <h3 class="h3">Richiesta inviata con successo</h3>
+      <p class="body soft">Benvenuto nel metodo Belvedere</p>
 
-        <div class="info-card">
-          <h4>Cosa succede ora</h4>
-          <p>Un consulente dedicato ti contatterà a breve per allineamento e priorità.</p>
-        </div>
+      <!-- LEYENDA RESTAURADA -->
+      <p class="body legend">
+        Stiamo predisponendo un’<strong>analisi personalizzata</strong> del tuo immobile con
+        indicazioni di <strong>pricing</strong>, <strong>posizionamento</strong> e
+        <strong>proiezioni di rendimento</strong>.
+      </p>
 
-        <div class="info-card">
-          <h4>Il nostro impegno</h4>
-          <p>Massima trasparenza, processi chiari e KPI misurabili in ogni fase.</p>
-        </div>
+      <div class="info-card">
+        <h4>Cosa succede ora</h4>
+        <p>Un consulente dedicato ti contatterà a breve per allineamento e priorità.</p>
+      </div>
 
-        <p class="quote">“L’eccellenza non è un caso: è un sistema.”</p>
+      <div class="info-card">
+        <h4>Il nostro impegno</h4>
+        <p>Massima trasparenza, processi chiari e KPI misurabili in ogni fase.</p>
+      </div>
 
-        <div class="modal-actions">
-          <button id="modal-back" class="btn btn-primary">Torna su</button>
-        </div>
+      <p class="quote">“L’eccellenza non è un caso: è un sistema.”</p>
+
+      <div class="modal-actions">
+        <button id="modal-back" class="btn btn-primary">Torna su</button>
       </div>
     </div>
-    <!-- FX layers -->
-    <div id="confetti-layer"></div>
-    <canvas id="fireworks"></canvas>
   </div>
+  <!-- FX layers -->
+  <div id="confetti-layer"></div>
+</div>
+
 
   <script>
     /* ====== UTIL ====== */
@@ -204,7 +212,6 @@
     function showView(name){
       Object.values(views).forEach(v => v.classList.remove('active'));
       views[name].classList.add('active');
-      // Bloquear/desbloquear acceso al form por scroll
       if (name === 'form') {
         body.classList.remove('is-form-locked');
         views.form.setAttribute('aria-hidden', 'false');
@@ -218,19 +225,16 @@
       }
     }
 
-    // Botones que abren el form
     $$('.js-open-form').forEach(btn => btn.addEventListener('click', (e) => {
       e.preventDefault();
       showView('form');
     }));
 
-    // Botón volver
     $('.js-go-home')?.addEventListener('click', (e) => {
       e.preventDefault();
       showView('home');
     });
 
-    // Navegación por hash (permite compartir /form)
     window.addEventListener('load', () => {
       if (location.hash === '#form') showView('form');
       else showView('home');
@@ -240,7 +244,7 @@
       else showView('home');
     });
 
-    /* ====== FORM SUBMIT (mantener URL Sheets) ====== */
+    /* ====== FORM SUBMIT ====== */
     const form = $('#contact-form');
     const successModal = $('#success-modal');
     const closeBtn = $('.modal-close');
@@ -277,7 +281,7 @@
 
       const scriptURL = 'https://script.google.com/macros/s/AKfycbxKcVuJo7VdMc4KOf-5xoHXGHQXx1B50wywRo_roKvpmHL50M7ckcHHubUgX8nBQuN8/exec';
 
-      openModal();
+      openModal();   // Muestra la leyenda + confetti
       form.reset();
 
       try {
@@ -308,7 +312,7 @@
     }
     function clearConfetti(){ confettiLayer.innerHTML=''; }
 
-    /* ====== FIREWORKS (canvas ligero) ====== */
+    /* ====== FIREWORKS ====== */
     const canvas = $('#fireworks');
     const ctx = canvas.getContext('2d');
     let fwRAF = null, particles = [];
@@ -341,7 +345,7 @@
         ctx.arc(p.x, p.y, 2, 0, Math.PI*2);
         ctx.fill();
         p.x += p.vx; p.y += p.vy;
-        p.vy += 0.02; // gravedad suave
+        p.vy += 0.02;
         p.life -= 1;
       });
       particles = particles.filter(p => p.life > 0);
