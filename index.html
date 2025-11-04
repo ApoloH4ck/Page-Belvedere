@@ -1,94 +1,80 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-  <title>Valutazione Gratuita — Belvedere Investimenti</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet"/>
-  <meta name="description" content="Belvedere Investimenti: valutazione gratuita, posizionamento e gestione data–driven del tuo immobile per massimizzare la resa.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Belvedere Investimenti — Valutazione Gratuita</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- =======================
-       HERO / WELCOME
-       ======================= -->
-  <section id="welcome" class="active">
-    <!-- Fondi/layers animati -->
-    <div class="bg-gradient"></div>
-    <div class="bg-blob blob-1"></div>
-    <div class="bg-blob blob-2"></div>
-    <div class="bg-blob blob-3"></div>
-    <div class="grain"></div>
-
-    <div class="welcome-content reveal">
-      <span class="tagline">VALUTAZIONE GRATUITA</span>
-      <h1>
-        Trasformiamo il tuo immobile in <span class="highlight">rendimento</span>.
+  <!-- HERO -->
+  <header id="hero" class="section">
+    <div class="hero-bg"></div>
+    <div class="hero-inner container">
+      <span class="badge">VALUTAZIONE GRATUITA</span>
+      <h1 class="h1">
+        Trasformiamo il tuo<br>
+        immobile in<br>
+        <span class="accent">rendimento.</span>
       </h1>
-      <p class="subhead">
-        Dietro Belvedere Investimenti c’è un <strong>ecosistema di specialisti</strong> — analisti, marketer, interior &amp; revenue manager — che lavora come un’unica macchina.
-        Valutiamo, posizioniamo e gestiamo il tuo appartamento per massimizzare la resa, <em>senza attriti</em> per te.
+      <p class="lead">
+        Dietro Belvedere Investimenti c’è un <strong>ecosistema di specialisti</strong> — analisti,
+        marketer, interior &amp; revenue manager — che lavora come un’unica macchina.
+        Valutiamo, posizioniamo e gestiamo il tuo appartamento per massimizzare la resa,
+        <em>senza attriti</em> per te.
       </p>
-      <ul class="value-points">
-        <li>Analisi dati e pricing dinamico proprietario</li>
-        <li>Marketing multicanale &amp; posizionamento premium</li>
-        <li>Gestione end-to-end con reportistica trasparente</li>
+
+      <ul class="pill-list">
+        <li class="pill">Analisi dati e pricing dinamico proprietario</li>
+        <li class="pill">Marketing multicanale &amp; posizionamento premium</li>
+        <li class="pill">Gestione end-to-end con reportistica trasparente</li>
       </ul>
 
       <div class="hero-ctas">
-        <button id="start-btn" class="btn-submit pulse">Inizia la valutazione</button>
-        <button id="go-about" class="link-soft-btn" aria-label="Scopri il nostro metodo">Scopri il nostro metodo</button>
+        <a class="btn btn-primary" href="#form-section">Inizia la valutazione</a>
+        <button class="scroll-down" aria-label="Scorri giù" data-scroll="#about">
+          ↓
+        </button>
       </div>
-
-      <div class="trust-row">
-        <span class="trust-dot"></span> Team d’élite, processi industrializzati, risultati misurabili
-      </div>
+      <p class="subnote">Team d’élite, processi industrializzati, risultati misurabili</p>
     </div>
+  </header>
 
-    <!-- Flecha scroll -->
-    <button id="scroll-cue" class="scroll-cue" aria-label="Scorri giù">
-      <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12 5v14M5 12l7 7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
-  </section>
+  <!-- CHI SIAMO -->
+  <section id="about" class="section about">
+    <div class="about-bg"></div>
+    <div class="container">
+      <div class="card card-glass">
+        <h2 class="h2">Chi siamo</h2>
+        <p class="body">
+          Belvedere Investimenti è un team con ampia esperienza in <strong>remodeling</strong>,
+          <strong>posizionamento premium</strong> e <strong>gestione data-driven</strong> di appartamenti.
+          Combiniamo analisi, design e marketing per trasformare immobili in asset ad alto rendimento,
+          con processi chiari e trasparenza totale.
+        </p>
 
-  <!-- =======================
-       ABOUT / CHI SIAMO
-       ======================= -->
-  <section id="about" class="about">
-    <div class="about-overlay"></div>
-    <div class="about-content reveal">
-      <h2>Chi siamo</h2>
-      <p class="lead">
-        Belvedere Investimenti è un team con ampia esperienza in <strong>remodeling</strong>,
-        <strong>posizionamento premium</strong> e <strong>gestione data–driven</strong> di appartamenti.
-        Combiniamo analisi, design e marketing per trasformare immobili in asset ad alto rendimento,
-        con processi chiari e trasparenza totale.
-      </p>
+        <ul class="grid-bullets">
+          <li>Progettazione e ristrutturazione orientate al ROI</li>
+          <li>Branding dell’immobile e distribuzione multicanale</li>
+          <li>Pricing dinamico e KPI condivisi</li>
+          <li>Gestione end-to-end con report periodici</li>
+        </ul>
 
-      <ul class="about-points">
-        <li>Progettazione e ristrutturazione orientate al ROI</li>
-        <li>Branding dell’immobile e distribuzione multicanale</li>
-        <li>Pricing dinamico e KPI condivisi</li>
-        <li>Gestione end-to-end con report periodici</li>
-      </ul>
-
-      <button id="goto-form" class="btn-submit about-cta">Richiedi la valutazione</button>
+        <a class="btn btn-primary btn-block-m" href="#form-section">Richiedi la valutazione</a>
+      </div>
     </div>
   </section>
 
-  <!-- =======================
-       FORM
-       ======================= -->
-  <section id="form-section">
-    <div class="container reveal">
-      <form id="contact-form" novalidate>
+  <!-- FORM -->
+  <section id="form-section" class="section section-form">
+    <div class="container">
+      <form id="contact-form" class="form">
         <div class="form-grid">
-          <div class="form-group full-width">
+          <div class="form-group full">
             <label for="nome-cognome">Nome e Cognome</label>
             <input type="text" id="nome-cognome" name="Nome e Cognome" placeholder="Mario Rossi" required>
           </div>
@@ -100,7 +86,7 @@
 
           <div class="form-group">
             <label for="telefono">Telefono</label>
-            <input type="tel" id="telefono" name="Telefono" placeholder="+39 123 4567890" inputmode="tel">
+            <input type="tel" id="telefono" name="Telefono" placeholder="+39 123 4567890">
           </div>
 
           <div class="form-group">
@@ -113,157 +99,102 @@
             <input type="text" id="indirizzo" name="Indirizzo" placeholder="Via Roma, 1">
           </div>
 
-          <!-- Rimossi: Camere / Bagni -->
-
-          <div class="form-group full-width">
+          <div class="form-group full">
             <label for="messaggio">Messaggio</label>
-            <textarea id="messaggio" name="Messaggio" placeholder="Raccontaci di più sul tuo immobile o sugli obiettivi di rendimento..." rows="4"></textarea>
+            <textarea id="messaggio" name="Messaggio" placeholder="Raccontaci di più sul tuo immobile o sugli obiettivi di rendimento..."></textarea>
           </div>
 
-          <div class="form-group full-width">
+          <div class="form-group full">
             <label for="conosciuti">Dove ci hai conosciuti?</label>
-            <select id="conosciuti" name="Conosciuti">
-              <option value="">Seleziona...</option>
-              <option value="internet">Internet</option>
-              <option value="social">Social Media</option>
-              <option value="amici">Amici</option>
-              <option value="qr-volantino">QR Code / Volantino</option>
-            </select>
+            <div class="select-wrap">
+              <select id="conosciuti" name="Conosciuti">
+                <option value="">Seleziona...</option>
+                <option value="internet">Internet</option>
+                <option value="social">Social Media</option>
+                <option value="amici">Amici</option>
+                <option value="qr-volantino">QR Code / Volantino</option>
+              </select>
+              <span class="chev">▾</span>
+            </div>
           </div>
         </div>
 
         <div class="privacy">
           <input type="checkbox" id="privacy" required>
-          <label for="privacy">
-            Accetto la <a href="#" target="_blank">privacy policy</a> e il trattamento dei miei dati personali.
+          <label for="privacy" class="privacy-text">
+            Accetto la <a href="#" target="_blank" rel="noopener">privacy policy</a> e il trattamento dei miei dati personali.
           </label>
         </div>
 
-        <button type="submit" class="btn-submit">Invia</button>
+        <button type="submit" class="btn btn-primary btn-send">Invia</button>
       </form>
     </div>
   </section>
 
-  <!-- =======================
-       SUCCESS MODAL
-       ======================= -->
-  <div id="success-modal" aria-hidden="true">
-    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <span class="close-btn" aria-label="Chiudi">&times;</span>
-
-      <div class="modal-header">
-        <div class="modal-icon">✨</div>
-        <h2 id="modal-title" class="modal-title">Richiesta inviata con successo</h2>
-        <p class="modal-kicker">Benvenuto nel metodo Belvedere</p>
-      </div>
-
+  <!-- MODAL SUCCESS -->
+  <div id="success-modal" class="modal">
+    <div class="modal-card">
+      <button class="modal-close" aria-label="Chiudi">×</button>
       <div class="modal-body">
-        <p class="modal-message">
-          Stiamo predisponendo un’<strong>analisi personalizzata</strong> del tuo immobile con indicazioni di pricing, posizionamento e proiezioni di rendimento.
-        </p>
-        <div class="modal-cards">
-          <div class="mcard">
-            <span class="mhead">Cosa succede ora</span>
-            <p>Un consulente dedicato ti contatterà a breve per allineamento e priorità.</p>
-          </div>
-          <div class="mcard">
-            <span class="mhead">Il nostro impegno</span>
-            <p>Massima trasparenza, processi chiari e KPI misurabili in ogni fase.</p>
-          </div>
+        <div class="emoji">✨</div>
+        <h3 class="h3">Richiesta inviata con successo</h3>
+        <p class="body soft">Benvenuto nel metodo Belvedere</p>
+
+        <div class="info-card">
+          <h4>Cosa succede ora</h4>
+          <p>Un consulente dedicato ti contatterà a breve per allineamento e priorità.</p>
         </div>
-        <p class="modal-phrase">
-          “L’eccellenza non è un caso: è un sistema.”
-        </p>
+
+        <div class="info-card">
+          <h4>Il nostro impegno</h4>
+          <p>Massima trasparenza, processi chiari e KPI misurabili in ogni fase.</p>
+        </div>
+
+        <p class="quote">“L’eccellenza non è un caso: è un sistema.”</p>
       </div>
     </div>
   </div>
 
-  <!-- =======================
-       SCRIPTS
-       ======================= -->
   <script>
-    // Elements
-    const body = document.body;
-    const welcome = document.getElementById('welcome');
-    const about = document.getElementById('about');
-    const formSection = document.getElementById('form-section');
+    // Smooth scroll
+    document.querySelectorAll('[data-scroll]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const target = document.querySelector(btn.dataset.scroll);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
 
-    const startBtn = document.getElementById('start-btn');
-    const goAbout = document.getElementById('go-about');
-    const scrollCue = document.getElementById('scroll-cue');
-    const gotoFormBtn = document.getElementById('goto-form');
+    // Also scroll arrow inside hero
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
+      });
+    });
 
+    // FORM (NO TOCAR: envío a Google Sheets se mantiene)
     const form = document.getElementById('contact-form');
     const successModal = document.getElementById('success-modal');
-    const closeBtn = document.querySelector('.close-btn');
+    const closeBtn = document.querySelector('.modal-close');
 
-    // 1) Siempre abrir en el HERO (evita que el navegador restaure #hash)
-    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
-
-    // 2) Reveal on scroll
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){ e.target.classList.add('revealed'); }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-    // 3) Modo formulario: oculta HERO y ABOUT para que no "tapen" visualmente
-    const enterFormMode = () => {
-      body.classList.add('form-mode'); // CSS controla visibilidad
-      // scroll al form
-      formSection.style.display = 'block';
-      formSection.classList.add('fade-in');
-      document.getElementById('form-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    };
-
-    // Botones
-    startBtn.addEventListener('click', enterFormMode);
-    gotoFormBtn?.addEventListener('click', (e) => { e.preventDefault(); enterFormMode(); });
-    goAbout?.addEventListener('click', () => {
-      document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-    scrollCue?.addEventListener('click', () => {
-      document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-
-    // 4) Confetti
-    function createConfetti() {
-      const confettiColors = ['#1EA0FF', '#7C4DFF', '#00D4FF', '#00E676', '#FFC400'];
-      for (let i = 0; i < 70; i++) {
-        const confetti = document.createElement('div');
-        confetti.classList.add('confetti');
-        confetti.style.left = Math.random() * 100 + '%';
-        confetti.style.top = Math.random() * 100 + '%';
-        confetti.style.animationDelay = (Math.random() * 0.6) + 's';
-        confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
-        confetti.style.setProperty('--x', (Math.random() - 0.5) * 240 + 'px');
-        confetti.style.setProperty('--y', (Math.random() * 260 + 120) + 'px');
-        confetti.style.setProperty('--deg', Math.random() * 360 + 'deg');
-        successModal.appendChild(confetti);
-      }
-    }
-
-    // 5) Envío (NO tocar el endpoint)
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const formData = {
-        NomeCognome: document.getElementById('nome-cognome')?.value || '',
-        Email: document.getElementById('email')?.value || '',
-        Telefono: document.getElementById('telefono')?.value || '',
-        Città: document.getElementById('citta')?.value || '',
-        Indirizzo: document.getElementById('indirizzo')?.value || '',
-        Camere: document.getElementById('camere')?.value || '',
-        Bagni: document.getElementById('bagni')?.value || '',
-        Messaggio: document.getElementById('messaggio')?.value || '',
-        Conosciuti: document.getElementById('conosciuti')?.value || ''
+        NomeCognome: document.getElementById('nome-cognome').value,
+        Email: document.getElementById('email').value,
+        Telefono: document.getElementById('telefono').value,
+        Città: document.getElementById('citta').value,
+        Indirizzo: document.getElementById('indirizzo').value,
+        Messaggio: document.getElementById('messaggio').value,
+        Conosciuti: document.getElementById('conosciuti').value
       };
 
       const scriptURL = 'https://script.google.com/macros/s/AKfycbxKcVuJo7VdMc4KOf-5xoHXGHQXx1B50wywRo_roKvpmHL50M7ckcHHubUgX8nBQuN8/exec';
 
+      // UX: abre modal y limpia
       successModal.classList.add('show');
-      createConfetti();
       form.reset();
 
       try {
@@ -272,21 +203,17 @@
           headers: { 'Content-Type': 'text/plain' },
           body: JSON.stringify(formData),
         });
-        if (response.ok) {
-          console.log('Modulo inviato con successo!');
-        } else {
-          console.log('Errore nell’invio del modulo.');
-        }
-      } catch (error) {
-        console.log('Invio completato lato client (possibile errore di rete).');
+        // Silencioso para mantener UX
+      } catch (err) {
+        // Silencioso también
       }
     });
 
     closeBtn.addEventListener('click', () => {
       successModal.classList.remove('show');
     });
-    window.addEventListener('click', (event) => {
-      if (event.target === successModal) successModal.classList.remove('show');
+    window.addEventListener('click', (e) => {
+      if (e.target === successModal) successModal.classList.remove('show');
     });
   </script>
 </body>
