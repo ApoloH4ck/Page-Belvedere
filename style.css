@@ -49,7 +49,7 @@ a{text-decoration:none;color:inherit}
 .btn-primary:hover{transform:translateY(-1px)}
 .btn-ghost{background:transparent; border:2px solid #d8e4f5; color:#173158}
 
-/* NUEVO: botón grande para acciones principales */
+/* botón grande compartido (para “Invia” y “Torna alla home”) */
 .btn-lg{padding:1.05em 1.6em; font-size:1.05rem}
 
 .footnote{color:#cbd9f2; margin:10px 0 0}
@@ -123,8 +123,6 @@ textarea{min-height:140px; resize:vertical}
   100%{ transform: translate(var(--dx), var(--dy)) rotate(var(--rot)); opacity:0 }
 }
 
-
-
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 900px){
   .chip-grid{grid-template-columns:1fr}
@@ -133,7 +131,7 @@ textarea{min-height:140px; resize:vertical}
   .pill-list{gap:10px}
   .form-grid{grid-template-columns:1fr}
   .btn-row .btn{width:100%}
-  /* Tamaño cómodo para acciones en móviles */
+  /* tamaño cómodo móvil para acciones principales */
   .btn-lg{min-height:56px; font-size:1.06rem}
 }
 
@@ -145,9 +143,27 @@ textarea{min-height:140px; resize:vertical}
   margin: 10px 0 6px;
 }
 
+/* Botón "Torna su" en el modal (ya existente) */
+.modal-actions{
+  display:flex;
+  justify-content:center;
+  margin-top:18px;
+}
+
+/* --------- OPTIMIZACIÓN DEL MODAL EN MÓVILES --------- */
+@media (max-width:560px){
+  .modal-card{
+    max-width:92%;
+    padding:16px 14px;
+    border-radius:16px;
+  }
+  .modal-body .emoji{font-size:24px}
+  .modal-card .h3{font-size:1.3rem; line-height:1.2; margin:6px 0 8px}
+  .modal-card .body.soft{font-size:.95rem}
+  .info-card{padding:10px 12px; margin:10px 0; border-radius:14px}
+  .quote{font-size:.95rem}
+}
+
 /* coment per finire questo */
 
-
-
-/* coment per finire questo */
 

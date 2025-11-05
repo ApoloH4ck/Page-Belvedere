@@ -135,7 +135,7 @@
           </label>
 
           <div class="btn-row">
-            <!-- AUMENTADO con btn-lg -->
+            <!-- agregado btn-lg a ambos -->
             <button type="submit" class="btn btn-primary btn-lg">Invia</button>
             <a href="#home" class="btn btn-ghost btn-lg js-go-home">Torna alla home</a>
           </div>
@@ -145,42 +145,34 @@
   </div>
 
   <!-- ====== MODAL SUCCESS + FX ====== -->
-<div id="success-modal" class="modal" aria-hidden="true">
-  <div class="modal-card">
-    <button class="modal-close" aria-label="Chiudi">×</button>
-    <div class="modal-body">
-      <div class="emoji">✨</div>
-      <h3 class="h3">Richiesta inviata con successo</h3>
-      <p class="body soft">Benvenuto nel metodo Belvedere</p>
+  <div id="success-modal" class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" aria-label="Chiudi">×</button>
+      <div class="modal-body">
+        <div class="emoji">✨</div>
+        <h3 class="h3">Richiesta inviata con successo</h3>
+        <p class="body soft">Benvenuto nel metodo Belvedere</p>
 
-      <!-- LEYENDA RESTAURADA -->
-      <p class="body legend">
-        Stiamo predisponendo un’<strong>analisi personalizzata</strong> del tuo immobile con
-        indicazioni di <strong>pricing</strong>, <strong>posizionamento</strong> e
-        <strong>proiezioni di rendimento</strong>.
-      </p>
+        <div class="info-card">
+          <h4>Cosa succede ora</h4>
+          <p>Un consulente dedicato ti contatterà a breve per allineamento e priorità.</p>
+        </div>
 
-      <div class="info-card">
-        <h4>Cosa succede ora</h4>
-        <p>Un consulente dedicato ti contatterà a breve per allineamento e priorità.</p>
-      </div>
+        <div class="info-card">
+          <h4>Il nostro impegno</h4>
+          <p>Massima trasparenza, processi chiari e KPI misurabili in ogni fase.</p>
+        </div>
 
-      <div class="info-card">
-        <h4>Il nostro impegno</h4>
-        <p>Massima trasparenza, processi chiari e KPI misurabili in ogni fase.</p>
-      </div>
+        <p class="quote">“L’eccellenza non è un caso: è un sistema.”</p>
 
-      <p class="quote">“L’eccellenza non è un caso: è un sistema.”</p>
-
-      <div class="modal-actions">
-        <button id="modal-back" class="btn btn-primary">Torna su</button>
+        <div class="modal-actions">
+          <button id="modal-back" class="btn btn-primary">Torna su</button>
+        </div>
       </div>
     </div>
+    <!-- FX layers -->
+    <div id="confetti-layer"></div>
   </div>
-  <!-- FX layers -->
-  <div id="confetti-layer"></div>
-</div>
-
 
   <script>
     /* ====== UTIL ====== */
@@ -253,11 +245,9 @@
     function openModal(){
       successModal.classList.add('show');
       launchConfetti(100);
-      startFireworks();
     }
     function closeModal(){
       successModal.classList.remove('show');
-      stopFireworks();
       clearConfetti();
     }
 
@@ -281,7 +271,7 @@
 
       const scriptURL = 'https://script.google.com/macros/s/AKfycbxKcVuJo7VdMc4KOf-5xoHXGHQXx1B50wywRo_roKvpmHL50M7ckcHHubUgX8nBQuN8/exec';
 
-      openModal();   // Muestra la leyenda + confetti
+      openModal();
       form.reset();
 
       try {
@@ -311,58 +301,6 @@
       }
     }
     function clearConfetti(){ confettiLayer.innerHTML=''; }
-
-    /* ====== FIREWORKS ====== */
-    const canvas = $('#fireworks');
-    const ctx = canvas.getContext('2d');
-    let fwRAF = null, particles = [];
-
-    function resizeCanvas(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-    window.addEventListener('resize', resizeCanvas);
-
-    function spawnFirework(){
-      const x = Math.random()*canvas.width*0.8 + canvas.width*0.1;
-      const y = Math.random()*canvas.height*0.4 + canvas.height*0.2;
-      const n = 36;
-      const hue = Math.floor(Math.random()*360);
-      for (let i=0;i<n;i++){
-        const angle = (Math.PI*2) * (i/n);
-        particles.push({
-          x, y,
-          vx: Math.cos(angle)*(1.5+Math.random()*2.5),
-          vy: Math.sin(angle)*(1.5+Math.random()*2.5),
-          life: 50+Math.random()*20,
-          color: `hsl(${hue+(Math.random()*20-10)}, 90%, 60%)`
-        });
-      }
-    }
-    function drawFireworks(){
-      ctx.fillStyle = 'rgba(0,0,0,0.2)';
-      ctx.fillRect(0,0,canvas.width,canvas.height);
-      particles.forEach(p=>{
-        ctx.beginPath();
-        ctx.fillStyle = p.color;
-        ctx.arc(p.x, p.y, 2, 0, Math.PI*2);
-        ctx.fill();
-        p.x += p.vx; p.y += p.vy;
-        p.vy += 0.02;
-        p.life -= 1;
-      });
-      particles = particles.filter(p => p.life > 0);
-      if (Math.random() < 0.06) spawnFirework();
-      fwRAF = requestAnimationFrame(drawFireworks);
-    }
-    function startFireworks(){
-      resizeCanvas();
-      canvas.classList.add('on');
-      if (!fwRAF) fwRAF = requestAnimationFrame(drawFireworks);
-    }
-    function stopFireworks(){
-      canvas.classList.remove('on');
-      if (fwRAF) cancelAnimationFrame(fwRAF);
-      fwRAF = null; particles = [];
-      ctx.clearRect(0,0,canvas.width,canvas.height);
-    }
   </script>
 </body>
 </html>
